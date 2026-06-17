@@ -1,375 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emery's Custom Upholstery | Quality Furniture & Auto Restoration</title>
-    <style>
-        /* Variables for easy management */
-        :root {
-            --brown-primary: #6b4423;
-            --amber-secondary: #c8902a;
-            --cream-background: #faf6f0;
-            --font-heading: Georgia, 'Times New Roman', serif;
-            --font-body: system-ui, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emery&#x27;s Custom Upholstery | Stockton, CA</title>
+<meta name="description" content="Emery&#x27;s Custom Upholstery — Quality custom upholstery in Stockton — restoring furniture and auto interiors with true craftsmanship and care.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --p:#6b4423; --s:#e0b878; --ac:#c8902a; --dark:#2a1a0e;
+  --bg:#ffffff; --soft:#f6f7fb; --ink:#1a2030; --muted:#5b667a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;overflow-x:hidden}
+h1,h2,h3,.brand{font-family:'Poppins', sans-serif;font-weight:700;line-height:1.15}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1140px,92%);margin:0 auto}
 
-        /* Base Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:16px 0;transition:.35s}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:min(1140px,92%)}
+.nav.scrolled{background:rgba(255,255,255,.85);backdrop-filter:blur(14px);box-shadow:0 6px 24px rgba(20,25,40,.08);padding:10px 0}
+.brand{font-size:1.3rem;font-weight:800;color:var(--p);display:flex;align-items:center;gap:.5rem}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--ac));box-shadow:0 0 0 4px color-mix(in srgb,var(--p) 18%,transparent)}
+.nav.scrolled .brand{color:var(--p)}
+.nav-links{display:flex;gap:2rem;font-weight:500;font-size:.95rem}
+.nav-links a{position:relative;color:var(--ink);opacity:.85;transition:.25s}
+.nav:not(.scrolled) .brand,.nav:not(.scrolled) .nav-links a{color:#fff}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;height:2px;width:0;background:var(--ac);transition:.3s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{padding:9px 18px;border-radius:999px;background:var(--ac);color:#fff!important;font-weight:600;font-size:.9rem;
+  box-shadow:0 8px 20px color-mix(in srgb,var(--ac) 40%,transparent);transition:.25s}
+.nav-cta:hover{transform:translateY(-2px)}
 
-        html {
-            scroll-behavior: smooth;
-        }
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden;
+  background:linear-gradient(135deg,var(--p) 0%,var(--dark) 100%)}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;animation:float 9s ease-in-out infinite}
+.hero::before{width:460px;height:460px;background:var(--ac);top:-120px;right:-80px}
+.hero::after{width:380px;height:380px;background:var(--s);bottom:-120px;left:-100px;animation-delay:-4s}
+.grid-ov{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,#000 40%,transparent 100%)}
+.hero-inner{position:relative;z-index:2;padding:120px 0 90px}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:7px 16px;border-radius:999px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);font-size:.82rem;font-weight:600;
+  letter-spacing:.04em;text-transform:uppercase;margin-bottom:1.5rem;backdrop-filter:blur(6px)}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:800;margin-bottom:1.1rem;letter-spacing:-.02em}
+.hero h1 .hl{background:linear-gradient(120deg,#fff,var(--s));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p.sub{font-size:clamp(1.05rem,2vw,1.3rem);max-width:560px;opacity:.92;margin-bottom:2.2rem}
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:15px 30px;border-radius:14px;font-weight:700;font-size:1.05rem;transition:.28s;font-family:'Poppins', sans-serif}
+.btn-primary{background:#fff;color:var(--p);box-shadow:0 14px 34px rgba(0,0,0,.25)}
+.btn-primary:hover{transform:translateY(-3px) scale(1.02)}
+.btn-primary .ic{width:20px;height:20px;display:inline-flex}
+.pulse{animation:pulse 2.4s infinite}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.scroll-ind{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;opacity:.7;animation:bob 2s infinite}
+.scroll-ind span{display:block;width:22px;height:36px;border:2px solid #fff;border-radius:12px;position:relative}
+.scroll-ind span::after{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:4px;height:7px;background:#fff;border-radius:2px;animation:scrolld 2s infinite}
 
-        body {
-            font-family: var(--font-body);
-            line-height: 1.6;
-            color: #333;
-            background-color: var(--cream-background);
-        }
+/* STATS */
+.stats{background:var(--dark);color:#fff;padding:0}
+.stats .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;transform:translateY(-50%);
+  background:#fff;border-radius:20px;padding:32px 24px;box-shadow:0 24px 60px rgba(20,25,40,.16)}
+.stat{text-align:center;color:var(--ink);position:relative}
+.stat:not(:last-child)::after{content:"";position:absolute;right:0;top:15%;height:70%;width:1px;background:#e7eaf1}
+.stat-num{font-family:'Poppins', sans-serif;font-size:2.4rem;font-weight:800;color:var(--p)}
+.stat-suf{font-family:'Poppins', sans-serif;font-size:2.4rem;font-weight:800;color:var(--p)}
+.stat-lbl{display:block;font-size:.85rem;color:var(--muted);font-weight:500;margin-top:.2rem}
 
-        h1, h2, h3 {
-            font-family: var(--font-heading);
-            color: var(--brown-primary);
-            text-align: center;
-            margin-bottom: 0.5em;
-        }
+/* SECTIONS */
+section.pad{padding:90px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 3.4rem}
+.tag{color:var(--ac);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.82rem}
+.sec-head h2{font-size:clamp(2rem,4vw,2.8rem);margin:.6rem 0 .8rem;letter-spacing:-.01em}
+.sec-head p{color:var(--muted);font-size:1.05rem}
 
-        /* Utility Classes/Elements */
-        section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            scroll-margin-top: 60px; /* Space for fixed header */
-        }
+/* SERVICES */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.4rem}
+.card{background:var(--bg);border:1px solid #eceef4;border-radius:20px;padding:34px 28px;transition:.35s;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--p),var(--ac));transform:scaleX(0);transform-origin:left;transition:.35s}
+.card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(20,25,40,.12);border-color:transparent}
+.card:hover::before{transform:scaleX(1)}
+.card-ic{width:58px;height:58px;border-radius:15px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--p) 14%,#fff),color-mix(in srgb,var(--ac) 14%,#fff));color:var(--p);transition:.35s}
+.card-ic svg{width:28px;height:28px}
+.card:hover .card-ic{background:linear-gradient(135deg,var(--p),var(--ac));color:#fff;transform:rotate(-6deg) scale(1.05)}
+.card h3{font-size:1.2rem;margin-bottom:.5rem}
+.card p{color:var(--muted);font-size:.96rem}
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
+/* ABOUT */
+.about{background:var(--soft)}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:center}
+.about-copy h2{font-size:clamp(1.9rem,4vw,2.6rem);margin:.6rem 0 1.1rem}
+.about-copy p{color:var(--muted);font-size:1.06rem;margin-bottom:1.4rem}
+.feats{display:flex;flex-direction:column;gap:.9rem}
+.feat{display:flex;align-items:center;gap:.8rem;font-weight:600}
+.feat .fi{width:34px;height:34px;border-radius:9px;background:color-mix(in srgb,var(--p) 12%,#fff);color:var(--p);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.feat .fi svg{width:18px;height:18px}
+.about-card{background:linear-gradient(150deg,var(--p),var(--dark));border-radius:24px;padding:42px 36px;color:#fff;position:relative;overflow:hidden;box-shadow:0 24px 60px color-mix(in srgb,var(--p) 30%,transparent)}
+.about-card::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:var(--ac);opacity:.35;filter:blur(50px);top:-60px;right:-50px}
+.about-card .big{font-family:'Poppins', sans-serif;font-size:3rem;font-weight:800;position:relative}
+.about-card p{position:relative;opacity:.92}
+.about-card .qt{position:relative;margin-top:1.4rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.2);font-style:italic;font-size:1.02rem}
 
-        /* Header & Navigation (Sticky) */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: #fff; /* Slightly contrasting background for visibility */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 1rem 2rem;
-        }
+/* CONTACT */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:1.3rem}
+.ci-row{display:flex;gap:1rem;align-items:flex-start}
+.ci-ic{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--p),var(--ac));color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.ci-ic svg{width:22px;height:22px}
+.ci-row h4{font-family:'Poppins', sans-serif;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.ci-row a,.ci-row span{font-size:1.12rem;font-weight:600;color:var(--ink)}
+.ci-row a:hover{color:var(--p)}
+.contact-card{background:var(--soft);border-radius:22px;padding:34px 30px;border:1px solid #eceef4}
+.contact-card h3{font-size:1.3rem;margin-bottom:.4rem}
+.contact-card .lead{color:var(--muted);margin-bottom:1.4rem;font-size:.98rem}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:11px 4px;border-bottom:1px solid #e7eaf1;font-size:.97rem}
+.hours td:last-child{text-align:right;font-weight:600}
+.hours tr:last-child td{border-bottom:none}
+.hours-note{color:var(--muted);font-weight:600}
+.big-call{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-top:1.6rem;padding:16px;border-radius:14px;
+  background:linear-gradient(135deg,var(--p),var(--ac));color:#fff;font-family:'Poppins', sans-serif;font-weight:700;font-size:1.15rem;transition:.28s}
+.big-call:hover{transform:translateY(-2px);box-shadow:0 14px 30px color-mix(in srgb,var(--p) 35%,transparent)}
+.big-call svg{width:22px;height:22px}
 
-        header .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+/* FOOTER */
+footer{background:var(--dark);color:#fff;padding:46px 0 30px;text-align:center}
+footer .brand{justify-content:center;color:#fff;margin-bottom:.7rem}
+footer p{opacity:.7;font-size:.9rem}
+footer .fnav{display:flex;gap:1.6rem;justify-content:center;margin:1.2rem 0;flex-wrap:wrap}
+footer .fnav a{opacity:.8;font-size:.92rem;transition:.2s}footer .fnav a:hover{opacity:1;color:var(--s)}
 
-        .logo {
-            font-family: var(--font-heading);
-            color: var(--brown-primary);
-            font-size: 1.8rem;
-            letter-spacing: 1.5px;
-        }
+/* REVEAL ANIM */
+.reveal{opacity:0;transform:translateY(34px);transition:.7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+.reveal.in{opacity:1;transform:none}
 
-        nav a {
-            margin-left: 1.5rem;
-            text-decoration: none;
-            color: #555;
-            transition: color 0.3s;
-            font-weight: bold;
-            padding: 0.5rem;
-        }
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-26px)}}
+@keyframes pulse{0%{box-shadow:0 14px 34px rgba(0,0,0,.25),0 0 0 0 rgba(255,255,255,.5)}70%{box-shadow:0 14px 34px rgba(0,0,0,.25),0 0 0 16px rgba(255,255,255,0)}100%{box-shadow:0 14px 34px rgba(0,0,0,.25),0 0 0 0 rgba(255,255,255,0)}}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+@keyframes scrolld{0%{opacity:1;top:7px}100%{opacity:0;top:18px}}
 
-        nav a:hover {
-            color: var(--amber-secondary);
-        }
-
-        /* Hero Section */
-        #hero {
-            background-color: var(--brown-primary);
-            text-align: center;
-            padding: 8rem 2rem;
-            color: #fff; /* Cream text on brown background */
-        }
-
-        #hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.2rem;
-            color: #ffedea; /* Lighter cream/off-white for contrast */
-        }
-
-        #hero p {
-            font-size: 1.5rem;
-            margin-bottom: 3rem;
-            font-style: italic;
-            opacity: 0.9;
-        }
-
-        /* Button Styling */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--amber-secondary);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.1s;
-            box-shadow: 0 4px var(--brown-primary) inset;
-        }
-
-        .btn:hover {
-            background-color: #d6a83e; /* Slightly lighter hover */
-            transform: translateY(-2px);
-            box-shadow: 0 6px var(--brown-primary) inset;
-        }
-
-        /* Services Section */
-        #services h2 {
-            font-size: 2.5rem;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .card {
-            background-color: #fff;
-            padding: 30px;
-            border-left: 5px solid var(--amber-secondary);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            color: var(--brown-primary);
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            text-align: left; /* Override default center alignment */
-        }
-
-        /* About Section */
-        #about p {
-            font-size: 1.15em;
-            max-width: 800px;
-            margin: 20px auto;
-            text-align: center;
-            color: #555;
-        }
-
-        /* Contact Section */
-        #contact h2 {
-            font-size: 2.5rem;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: center;
-            margin-top: 30px;
-            text-align: left;
-        }
-
-        .contact-block {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        #contact a {
-            font-size: 1.8rem;
-            color: var(--brown-primary);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-        }
-        
-        /* Hours Table */
-        .hours-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        .hours-table th, .hours-table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .hours-table th {
-            background-color: var(--brown-primary);
-            color: white;
-            font-weight: bold;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--brown-primary);
-            color: #fff; /* Cream text on brown background */
-            text-align: center;
-            padding: 2rem 0;
-            font-family: var(--font-heading);
-            font-size: 1.1em;
-        }
-
-        /* Responsive Adjustments (Mobile View) */
-        @media max-width: 640px {
-            section {
-                padding: 2rem 1rem;
-            }
-
-            header .nav-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-
-            nav a {
-                margin: 0 10px;
-                display: inline-block;
-            }
-
-            /* Hero adjustment */
-            #hero h1 {
-                font-size: 2.8rem;
-            }
-            #hero p {
-                font-size: 1.2rem;
-                margin-bottom: 2rem;
-            }
-
-            /* Services grid becomes single column automatically due to minmax/auto-fit, but explicitly ensuring good spacing */
-            .service-grid {
-                gap: 20px;
-            }
-        }
-    </style>
+@media(max-width:880px){
+  .nav-links{display:none}
+  .about-grid,.contact .wrap{grid-template-columns:1fr;gap:2rem}
+  .stats .wrap{grid-template-columns:1fr;transform:translateY(-30px);gap:1.4rem}
+  .stat:not(:last-child)::after{display:none}
+  .hero{min-height:auto}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
 </head>
-
 <body>
+<nav class="nav" id="nav"><div class="wrap">
+  <a href="#" class="brand"><span class="dot"></span>Emery&#x27;s Custom Upholstery</a>
+  <div class="nav-links"><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+  <a href="tel:+12099414233" class="nav-cta">Call Now</a>
+</div></nav>
 
-    <!-- 1. Header (Sticky Nav) -->
-    <header>
-        <div class="nav-content">
-            <div class="logo">Emery's Custom Upholstery</div>
-            <nav>
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+<header class="hero">
+  <div class="grid-ov"></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>&nbsp;Stockton, CA</span>
+    <h1>Furniture Reborn, <span class="hl">Built to Last</span></h1>
+    <p class="sub">Quality custom upholstery in Stockton — restoring furniture and auto interiors with true craftsmanship and care.</p>
+    <div class="cta-row">
+      <a href="tel:+12099414233" class="btn btn-primary pulse"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>(209) 941-4233</a>
+      <a href="#services" class="btn btn-ghost">Our Services</a>
+    </div>
+  </div>
+  <a href="#stats" class="scroll-ind"><span></span></a>
+</header>
 
-    <!-- 2. Hero Section -->
-    <section id="hero">
-        <h1>Emery's Custom Upholstery</h1>
-        <p>Quality Custom Upholstery in Stockton</p>
-        <a href="tel:12099414233" class="btn">Call (209) 941-4233</a>
-    </section>
+<section class="stats" id="stats"><div class="wrap">
+          <div class="stat reveal" style="--d:0ms">
+            <span class="stat-num" data-target="25">25</span><span class="stat-suf">+</span>
+            <span class="stat-lbl">Years Experience</span>
+          </div>
+          <div class="stat reveal" style="--d:120ms">
+            <span class="stat-num" data-target="5">5</span><span class="stat-suf">★</span>
+            <span class="stat-lbl">Customer Rated</span>
+          </div>
+          <div class="stat reveal" style="--d:240ms">
+            <span class="stat-num" data-target="100">100</span><span class="stat-suf">%</span>
+            <span class="stat-lbl">Custom Work</span>
+          </div>
+</div></section>
 
-    <!-- 3. Services Section -->
-    <section id="services" style="background-color: var(--cream-background);">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-            
-            <div class="card">
-                <h3>Furniture Reupholstery</h3>
-                <p>Bringing life back to cherished pieces. We cover everything from sofas and chairs to antique restoration.</p>
-            </div>
+<section class="pad" id="services"><div class="wrap">
+  <div class="sec-head reveal">
+    <span class="tag">What We Do</span>
+    <h2>Our Services</h2>
+    <p>Skilled hands, premium materials and a finish that lasts for years.</p>
+  </div>
+  <div class="cards">
+          <article class="card reveal" style="--d:0ms">
+            <div class="card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 13a2 2 0 0 1 2-2 2 2 0 0 1 2 2v3h12v-3a2 2 0 0 1 4 0v5H2z"/><path d="M5 18v2M19 18v2"/></svg></div>
+            <h3>Furniture Reupholstery</h3>
+            <p>New life for sofas, chairs and heirloom pieces.</p>
+          </article>
+          <article class="card reveal" style="--d:90ms">
+            <div class="card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="3"/><path d="M3 7c2 0 2 2 4 2M21 7c-2 0-2 2-4 2M3 15c2 0 2-2 4-2M21 15c-2 0-2-2-4-2"/></svg></div>
+            <h3>Custom Cushions</h3>
+            <p>Made-to-measure cushions in the fabric you love.</p>
+          </article>
+          <article class="card reveal" style="--d:180ms">
+            <div class="card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5a2 2 0 0 1 1.9-1.3h10.2A2 2 0 0 1 19 8l2 5"/><path d="M3 13h18v4a1 1 0 0 1-1 1h-1a2 2 0 0 1-4 0H9a2 2 0 0 1-4 0H4a1 1 0 0 1-1-1z"/><circle cx="7.5" cy="16.5" r="0.5"/><circle cx="16.5" cy="16.5" r="0.5"/></svg></div>
+            <h3>Auto Interiors &amp; Headliners</h3>
+            <p>Sagging headliners and worn seats restored like new.</p>
+          </article>
+          <article class="card reveal" style="--d:270ms">
+            <div class="card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l15-15"/><circle cx="19" cy="5" r="2"/><path d="M15 7l2 2"/></svg></div>
+            <h3>Fabric Repair &amp; Restoration</h3>
+            <p>Careful repairs that preserve and protect your furniture.</p>
+          </article>
+  </div>
+</div></section>
 
-            <div class="card">
-                <h3>Custom Cushions & Seating</h3>
-                <p>Perfectly tailored seating solutions for your home or commercial space. Custom sizing, perfect fit every time.</p>
-            </div>
+<section class="pad about" id="about"><div class="wrap about-grid">
+  <div class="about-copy reveal">
+    <span class="tag">About Us</span>
+    <h2>Craftsmanship That Shows</h2>
+    <p>Emery&#x27;s Custom Upholstery is a trusted Stockton shop known for fine craftsmanship and great customer service, restoring furniture and auto interiors with care.</p>
+    <div class="feats">
+      <div class="feat"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5z"/><path d="M9 12l2 2 4-4"/></svg></span>Furniture &amp; auto specialists</div>
+      <div class="feat"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 21.5 12 17.8 5.5 21.5 7 14.5 2 9.5 9 9"/></svg></span>Premium fabrics &amp; materials</div>
+      <div class="feat"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Honest, helpful service</div>
+    </div>
+  </div>
+  <div class="about-card reveal" style="--d:120ms">
+    <div class="big">Made to Last</div>
+    <p>We don&#x27;t just recover furniture — we rebuild it to outlast the original.</p>
+    <div class="qt">&ldquo;The customer service was good and I appreciate your fine work.&rdquo;</div>
+  </div>
+</div></section>
 
-            <div class="card">
-                <h3>Headliner & Auto Interiors</h3>
-                <p>Complete automotive restoration and interior customization. Headliners, seats, and detailing for your vehicle.</p>
-            </div>
+<section class="pad contact" id="contact"><div class="wrap">
+  <div class="contact-info reveal">
+    <span class="tag">Get In Touch</span>
+    <h2 style="font-size:clamp(1.9rem,4vw,2.6rem);margin:.5rem 0 1.4rem">Visit or Call Us</h2>
+    <div class="ci-row"><span class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><div><h4>Phone</h4><a href="tel:+12099414233">(209) 941-4233</a></div></div>
+    <div class="ci-row"><span class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><h4>Address</h4><span>1147 S Center St, Stockton, CA 95206</span></div></div>
+    <div class="ci-row"><span class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h4>Hours</h4><span>Mon–Fri 9–6</span></div></div>
+  </div>
+  <div class="contact-card reveal" style="--d:120ms">
+    <h3>Business Hours</h3>
+    <p class="lead">Stop by during the hours below, or give us a call anytime.</p>
+            <table class="hours">
+              <tbody>
+              <tr><td>Mon – Fri</td><td>9 AM – 6 PM</td></tr>
+              <tr><td>Saturday</td><td>Closed</td></tr>
+              <tr><td>Sunday</td><td>Closed</td></tr>
+              </tbody>
+            </table>
+    <a href="tel:+12099414233" class="big-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>(209) 941-4233</a>
+  </div>
+</div></section>
 
-            <div class="card">
-                <h3>Fabric Repair & Restoration</h3>
-                <p>Professional handling of tears, stains, and damage. We repair and restore fine fabrics with the utmost care.</p>
-            </div>
-        </div>
-    </section>
+<footer>
+  <a href="#" class="brand" style="color:#fff"><span class="dot"></span>Emery&#x27;s Custom Upholstery</a>
+  <div class="fnav"><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+  <p>Emery&#x27;s Custom Upholstery &middot; Stockton, CA &middot; &copy; 2026</p>
+</footer>
 
-    <!-- 4. About Us Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are a trusted Stockton upholstery shop known for fine craftsmanship and dedication to quality service. Whether restoring antique furniture or customizing modern auto interiors, we treat every piece with care.</p>
-    </section>
-
-    <!-- 5. Contact Section -->
-    <section id="contact" style="background-color: #eee;">
-        <h2>Visit Us</h2>
-        
-        <div class="container">
-            <div class="contact-info">
-                
-                <div class="contact-block">
-                    <h3>Call Us</h3>
-                    <a href="tel:2099414233">(209) 941-4233</a>
-                    <p style="margin-top: 15px; font-size: 1.1em;">We are ready to answer your upholstery questions!</p>
-                </div>
-
-                <div class="contact-block">
-                    <h3>Our Location</h3>
-                    <p style="font-family: var(--font-heading); margin-bottom: 5px;">Emery's Custom Upholstery</p>
-                    <p>(1147 S Center St)</p>
-                    <p>Stockton, CA 95206</p>
-                </div>
-
-                <div class="contact-block">
-                    <h3>Hours</h3>
-                    <table class="hours-table">
-                        <thead>
-                            <tr>
-                                <th style="width: 30%;">Day</th>
-                                <th style="text-align: center;">Hours</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Monday - Friday</td>
-                                <td style="text-align: center;">9am - 6pm</td>
-                            </tr>
-                            <tr>
-                                <td>Saturday</td>
-                                <td style="text-align: center; color: red;">Closed</td>
-                            </tr>
-                            <tr>
-                                <td>Sunday</td>
-                                <td style="text-align: center; color: red;">Closed</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. Footer -->
-    <footer>
-        Emery's Custom Upholstery © 2026
-    </footer>
-
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+function animCount(el){const t=+el.dataset.target;let c=0;const step=Math.max(1,Math.ceil(t/60));const tick=()=>{c+=step;if(c>=t){el.textContent=t}else{el.textContent=c;requestAnimationFrame(tick)}};tick();}
+const sio=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){animCount(e.target);sio.unobserve(e.target)}}),{threshold:.6});
+document.querySelectorAll('.stat-num').forEach(el=>sio.observe(el));
+</script>
 </body>
 </html>
