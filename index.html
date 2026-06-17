@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emery's Custom Upholstery | Quality Furniture & Auto Restoration</title>
+    <style>
+        /* Variables for easy management */
+        :root {
+            --brown-primary: #6b4423;
+            --amber-secondary: #c8902a;
+            --cream-background: #faf6f0;
+            --font-heading: Georgia, 'Times New Roman', serif;
+            --font-body: system-ui, sans-serif;
+        }
+
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--cream-background);
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--brown-primary);
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+
+        /* Utility Classes/Elements */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            scroll-margin-top: 60px; /* Space for fixed header */
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        /* Header & Navigation (Sticky) */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #fff; /* Slightly contrasting background for visibility */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+        }
+
+        header .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            color: var(--brown-primary);
+            font-size: 1.8rem;
+            letter-spacing: 1.5px;
+        }
+
+        nav a {
+            margin-left: 1.5rem;
+            text-decoration: none;
+            color: #555;
+            transition: color 0.3s;
+            font-weight: bold;
+            padding: 0.5rem;
+        }
+
+        nav a:hover {
+            color: var(--amber-secondary);
+        }
+
+        /* Hero Section */
+        #hero {
+            background-color: var(--brown-primary);
+            text-align: center;
+            padding: 8rem 2rem;
+            color: #fff; /* Cream text on brown background */
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.2rem;
+            color: #ffedea; /* Lighter cream/off-white for contrast */
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* Button Styling */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--amber-secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            box-shadow: 0 4px var(--brown-primary) inset;
+        }
+
+        .btn:hover {
+            background-color: #d6a83e; /* Slightly lighter hover */
+            transform: translateY(-2px);
+            box-shadow: 0 6px var(--brown-primary) inset;
+        }
+
+        /* Services Section */
+        #services h2 {
+            font-size: 2.5rem;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 30px;
+            border-left: 5px solid var(--amber-secondary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--brown-primary);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            text-align: left; /* Override default center alignment */
+        }
+
+        /* About Section */
+        #about p {
+            font-size: 1.15em;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+            color: #555;
+        }
+
+        /* Contact Section */
+        #contact h2 {
+            font-size: 2.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .contact-block {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        #contact a {
+            font-size: 1.8rem;
+            color: var(--brown-primary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        /* Hours Table */
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .hours-table th, .hours-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .hours-table th {
+            background-color: var(--brown-primary);
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--brown-primary);
+            color: #fff; /* Cream text on brown background */
+            text-align: center;
+            padding: 2rem 0;
+            font-family: var(--font-heading);
+            font-size: 1.1em;
+        }
+
+        /* Responsive Adjustments (Mobile View) */
+        @media max-width: 640px {
+            section {
+                padding: 2rem 1rem;
+            }
+
+            header .nav-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 10px;
+                display: inline-block;
+            }
+
+            /* Hero adjustment */
+            #hero h1 {
+                font-size: 2.8rem;
+            }
+            #hero p {
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+            }
+
+            /* Services grid becomes single column automatically due to minmax/auto-fit, but explicitly ensuring good spacing */
+            .service-grid {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. Header (Sticky Nav) -->
+    <header>
+        <div class="nav-content">
+            <div class="logo">Emery's Custom Upholstery</div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section id="hero">
+        <h1>Emery's Custom Upholstery</h1>
+        <p>Quality Custom Upholstery in Stockton</p>
+        <a href="tel:12099414233" class="btn">Call (209) 941-4233</a>
+    </section>
+
+    <!-- 3. Services Section -->
+    <section id="services" style="background-color: var(--cream-background);">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            
+            <div class="card">
+                <h3>Furniture Reupholstery</h3>
+                <p>Bringing life back to cherished pieces. We cover everything from sofas and chairs to antique restoration.</p>
+            </div>
+
+            <div class="card">
+                <h3>Custom Cushions & Seating</h3>
+                <p>Perfectly tailored seating solutions for your home or commercial space. Custom sizing, perfect fit every time.</p>
+            </div>
+
+            <div class="card">
+                <h3>Headliner & Auto Interiors</h3>
+                <p>Complete automotive restoration and interior customization. Headliners, seats, and detailing for your vehicle.</p>
+            </div>
+
+            <div class="card">
+                <h3>Fabric Repair & Restoration</h3>
+                <p>Professional handling of tears, stains, and damage. We repair and restore fine fabrics with the utmost care.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a trusted Stockton upholstery shop known for fine craftsmanship and dedication to quality service. Whether restoring antique furniture or customizing modern auto interiors, we treat every piece with care.</p>
+    </section>
+
+    <!-- 5. Contact Section -->
+    <section id="contact" style="background-color: #eee;">
+        <h2>Visit Us</h2>
+        
+        <div class="container">
+            <div class="contact-info">
+                
+                <div class="contact-block">
+                    <h3>Call Us</h3>
+                    <a href="tel:2099414233">(209) 941-4233</a>
+                    <p style="margin-top: 15px; font-size: 1.1em;">We are ready to answer your upholstery questions!</p>
+                </div>
+
+                <div class="contact-block">
+                    <h3>Our Location</h3>
+                    <p style="font-family: var(--font-heading); margin-bottom: 5px;">Emery's Custom Upholstery</p>
+                    <p>(1147 S Center St)</p>
+                    <p>Stockton, CA 95206</p>
+                </div>
+
+                <div class="contact-block">
+                    <h3>Hours</h3>
+                    <table class="hours-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 30%;">Day</th>
+                                <th style="text-align: center;">Hours</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Monday - Friday</td>
+                                <td style="text-align: center;">9am - 6pm</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td style="text-align: center; color: red;">Closed</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td style="text-align: center; color: red;">Closed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Footer -->
+    <footer>
+        Emery's Custom Upholstery © 2026
+    </footer>
+
+</body>
+</html>
